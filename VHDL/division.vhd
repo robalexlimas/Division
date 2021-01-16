@@ -40,7 +40,7 @@ dividend_temp(0) <= dividend;
 residue_temp(0) <= (others=>'0');
 
 --Steps implementation
-steps_instantiate: for i in 0 to n-1 generate
+steps_instantiation: for i in 0 to n-1 generate
 	steps: entity work.step
 	generic map(
 		n => n
@@ -52,7 +52,7 @@ steps_instantiate: for i in 0 to n-1 generate
 		residue => residue_temp(i+1),
 		quotient => dividend_temp(i+1)
 	);
-end generate steps_instantiate;
+end generate steps_instantiation;
 
 --Output assignation
 quotient <= dividend_temp(n);
